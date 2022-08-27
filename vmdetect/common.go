@@ -103,10 +103,6 @@ func CommonChecks() (bool, string) {
 		return true, "CPU Vendor (cpuid space)"
 	}
 
-	if vmDetected, how := checkNetworking(); vmDetected {
-		return true, how
-	}
-
 	vmStat, err := mem.VirtualMemory()
 
 	if err != nil {
